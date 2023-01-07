@@ -2,27 +2,27 @@
 
 ## Instalação
 
-### Crie uma pasta
+#### Crie uma pasta
 	~ mkdir docker
 	
-### Clonando o repositório
+#### Clonando o repositório
 	~ cd docker
 	~ git clone --recurse-submodule https://github.com/magenteiro/firestore.git mage2
 
-### Criando os containers
+#### Criando os containers
 	~ cd mage2
 	~ bin/start
 
-### Copie todos os arquivos da pasta src/ para dentro do container
+#### Copie todos os arquivos da pasta src/ para dentro do container
 	~ bin/copytocontainer --all
 
-### Instalando as dependências da loja
+#### Instalando as dependências da loja
 	~ bin/composer install
 
-### Instalando o banco de dados
+#### Instalando o banco de dados
 	~ bin/mysql < 20201016-firestore.sql
 
-### Instalando a loja Magento 2
+#### Instalando a loja Magento 2
 bin/magento setup:install \
   --db-host="db" \
   --db-name="magento" \
@@ -57,21 +57,25 @@ bin/magento setup:install \
   --use-rewrites=1 \
   --no-interaction
 
-### Copiando e descompactando o arquivo de media dentro da loja
+#### Copiando e descompactando o arquivo de media dentro da loja
 	~ copiar o arquivo dento do diretório: docker/mage2/src
 	~ bin/copytocontainer media_product.tar.gz pub/media
 	~ bin/bash
 	~ tar xzvf media_product.tar.gz
 
-### Criando o virtual host da loja
+#### Criando o virtual host da loja
 	Acesse o arquivo: ~ sudo nano /etc/hosts
 	Adicione a seguinte instrução: 127.0.0.1 mage2.local
 	Salve as alterações e saia do arquivo
 
-### Configuração do nginx
+#### Configuração do nginx
 	Remoneie o arquivo: "nginx.conf.sample" para "nginx.conf"
 	Renomeie o arquivo: ".htaccess" para ".htaccess.bkp"
 	Restarte os containers
 
-### Limpe os caches da loja
+#### Limpe os caches da loja
 	~ bin/magento cache:flush
+
+## Download do Banco de Dados e Arquivos de Média
+  Banco: https://drive.google.com/file/d/1CmA4kI2KYI1OuAQhtuw6zLcdnRsa0jcw/view?usp=sharing
+  Média: https://drive.google.com/file/d/1MyEeJSUKiLz8MRICQuhk0T0mymSt7Gju/view?usp=sharing
