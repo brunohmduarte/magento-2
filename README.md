@@ -77,5 +77,5 @@ bin/magento setup:install \
 	~ bin/magento cache:flush
 
 ## Download do Banco de Dados e Arquivos de Média
-  Banco: https://drive.google.com/file/d/1CmA4kI2KYI1OuAQhtuw6zLcdnRsa0jcw/view?usp=sharing
+  Banco: https://drive.google.com/file/d/1CmA4kI2KYI1OuAQhtuw6zLcdnRsa0jcw/view?usp=sharing  
   Média: https://drive.google.com/file/d/1MyEeJSUKiLz8MRICQuhk0T0mymSt7Gju/view?usp=sharing
